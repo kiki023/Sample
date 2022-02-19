@@ -1,5 +1,14 @@
 resources:
 - deployment.yaml
+- aggregated-metrics-reader.yaml
+- auth-delegator.yaml
+- auth-reader.yaml
+- grafana.values
+- metrics-apiservice.yaml
+- metrics-server-deployment.yaml
+- metrics-server-service.yaml
+- prometheus.values.yml
+- resource-reader.yaml
 
 
 images:
