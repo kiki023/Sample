@@ -1,0 +1,19 @@
+resources:
+- deployment.yaml
+
+
+images:
+- name: $CONTAINER_IMAGE
+  newName: ${ECR_REPOSITORY}
+  newTag: ${IMAGE_TAG}
+- name: dotpay:1a6171bdfb84254831b5b6170179007ba693eac1
+  newName: 939500746301.dkr.ecr.us-west-1.amazonaws.com/dotpay
+  newTag: 1a6171bdfb84254831b5b6170179007ba693eac1
+- name: dotpay:36294d7f2bc54469474464a94347560452733d12
+  newName: 939500746301.dkr.ecr.us-west-1.amazonaws.com/dotpay
+  newTag: 36294d7f2bc54469474464a94347560452733d12
+- name: dotpay:9e75441bc1ca5b94776820f1e8dc99e822cd0296
+  newName: 939500746301.dkr.ecr.us-west-1.amazonaws.com/dotpay
+  newTag: 9e75441bc1ca5b94776820f1e8dc99e822cd0296
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
