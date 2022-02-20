@@ -15,6 +15,9 @@ images:
 - name: $CONTAINER_IMAGE
   newName: ${ECR_REPOSITORY}
   newTag: ${IMAGE_TAG}
+- name: argocd-serv
+  newName: 939500746301.dkr.ecr.us-west-1.amazonaws.com/dotpay
+  newTag: 21a29892c9d73e70864cc3443ff5be32712cd3fe
 - name: dotpay:1a6171bdfb84254831b5b6170179007ba693eac1
   newName: 939500746301.dkr.ecr.us-west-1.amazonaws.com/dotpay
   newTag: 1a6171bdfb84254831b5b6170179007ba693eac1
