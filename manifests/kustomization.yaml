@@ -9,7 +9,7 @@ resources:
 - metrics-server-service.yaml
 - prometheus.values.yml
 - resource-reader.yaml
-
+- argocd.yaml 
 
 images:
 - name: $CONTAINER_IMAGE
