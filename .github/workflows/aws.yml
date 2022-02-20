@@ -105,7 +105,7 @@ jobs:
           TAG: ${{github.sha}}
       run: |
           cd manifests
-          kustomize edit set image argocd-serv=$ECR_REGISTRY/$ECR_REPOSITORY:$TAG
+          kustomize edit set image $CONTAINER_IMAGE=$ECR_REGISTRY/$ECR_REPOSITORY:$TAG
           cat kustomization.yaml
     - name: Commit files
       run: |
