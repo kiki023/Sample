@@ -109,13 +109,18 @@ jobs:
           cat kustomization.yaml
     - name: Commit files
       run: |
+         cd manifests
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git commit -am "Bump docker tag"
+          git push -u origin main
     - name: Push changes
       uses: ad-m/github-push-action@master
       with:
           github_token: ${{ secrets.GH_TOKEN }}
           branch: ${{ github.ref }}
           Kubeconfig: ${{ secrets.KUBE_CONFIG }}
-          #
+          
+          
+          
+    
