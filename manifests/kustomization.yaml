@@ -9,7 +9,7 @@ resources:
 - metrics-server-service.yaml
 - prometheus.values.yml
 - resource-reader.yaml
-- argocd.yaml 
+- argocd.yaml
 
 images:
 - name: $CONTAINER_IMAGE
@@ -24,6 +24,9 @@ images:
 - name: dotpay:36294d7f2bc54469474464a94347560452733d12
   newName: 939500746301.dkr.ecr.us-west-1.amazonaws.com/dotpay
   newTag: 36294d7f2bc54469474464a94347560452733d12
+- name: dotpay:4416590f235401d1da6e1d74394c5007e9ec54e4
+  newName: 939500746301.dkr.ecr.us-west-1.amazonaws.com/dotpay
+  newTag: 4416590f235401d1da6e1d74394c5007e9ec54e4
 - name: dotpay:77801e86ed643c128b6356617921effa4a20776e
   newName: 939500746301.dkr.ecr.us-west-1.amazonaws.com/dotpay
   newTag: 77801e86ed643c128b6356617921effa4a20776e
