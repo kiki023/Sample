@@ -113,7 +113,7 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git commit -am "Bump docker tag"
-          git push origin main
+          git push -u origin master
     - name: Push changes
       uses: ad-m/github-push-action@master
       with:
