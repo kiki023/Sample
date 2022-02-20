@@ -24,6 +24,9 @@ images:
 - name: dotpay:36294d7f2bc54469474464a94347560452733d12
   newName: 939500746301.dkr.ecr.us-west-1.amazonaws.com/dotpay
   newTag: 36294d7f2bc54469474464a94347560452733d12
+- name: dotpay:77801e86ed643c128b6356617921effa4a20776e
+  newName: 939500746301.dkr.ecr.us-west-1.amazonaws.com/dotpay
+  newTag: 77801e86ed643c128b6356617921effa4a20776e
 - name: dotpay:7d44f89ec93130e659dbbce4f7d33b781383cd4a
   newName: 939500746301.dkr.ecr.us-west-1.amazonaws.com/dotpay
   newTag: 7d44f89ec93130e659dbbce4f7d33b781383cd4a
