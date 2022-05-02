@@ -12,7 +12,11 @@ jobs:
         
         - name: Update Kubernetes resources   
           run: |
-            mkdir k8s
+            echo 'Add value2' >> springapp.yml
+        - name: move to dir # Move the generated files into output folder
+          run: |
+            mkdir -p output
+            yes| cp -rf springapp.yml ./output/
         - name: Commit files
           run: |
             git config --local user.email "action@github.com"
