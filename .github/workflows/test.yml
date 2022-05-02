@@ -1,25 +1,25 @@
 on:
   push:
     branches:
-      -  main:
+      -  'main'
       
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
         - name: Checkout
-        uses: actions/checkout@v2
+          uses: actions/checkout@v2
         
         - name: Update Kubernetes resources   
           run: |
             mkdir k8s
-      - name: Commit files
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git commit -am "Bump docker tag"
-      - name: Push changes
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.PAT }}
-          branch: ${{ github.ref }}
+        - name: Commit files
+          run: |
+            git config --local user.email "action@github.com"
+            git config --local user.name "GitHub Action"
+            git commit -am "Bump docker tag"
+        - name: Push changes
+          uses: ad-m/github-push-action@master
+          with:
+            github_token: ${{ secrets.PAT }}
+            branch: ${{ github.ref }}
