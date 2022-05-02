@@ -12,7 +12,7 @@ jobs:
         
         - name: Update Kubernetes resources   
           run: |
-            echo 'Add value2' >> springapp.yml
+            echo 'Add value3' >> springapp.yml
         - name: move to dir # Move the generated files into output folder
           run: |
             mkdir -p output
