@@ -3,8 +3,8 @@ on:
     branches:
       -  'master'
 
-env:
-  GH_TOKEN: ${{ secrets.PAT }}   
+#env:
+#  GH_TOKEN: ${{ secrets.PAT }}   
   
 jobs:
   build:
@@ -21,7 +21,7 @@ jobs:
         
         - name: Update Kubernetes resources   
           run: |
-            echo 'Add value7' >> springapp.yml
+            echo 'Add value9' >> springapp.yml
        
         - name: Commit files
           run: |
@@ -29,8 +29,8 @@ jobs:
             git config --local user.name "kiki023"
             git commit -am "Bump docker tag"
             git push
-        #- name: Pushing to the protected branch 'protected'
-        #  uses: CasperWA/push-protected@v2
-       #   with:
-       #     token: ${{ secrets.PAT }}
-       #     branch: master
+        - name: Pushing to the protected branch 'protected'
+          uses: CasperWA/push-protected@v2
+          with:
+            token: ${{ secrets.PAT }}
+            branch: ${{ github.ref }}
