@@ -22,9 +22,7 @@ jobs:
             git config --local user.email "action@github.com"
             git config --local user.name "GitHub Action"
             git commit -am "Bump docker tag"
-        - name: Create a new branch
-          run: |
-            git checkout -b bumper
+        
         - name: create pull request
           id: open-pr
           uses: repo-sync/pull-request@v2
