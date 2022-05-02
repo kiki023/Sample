@@ -22,9 +22,10 @@ jobs:
             git config --local user.email "ike.lovelyn@yahoo.com"
             git config --local user.name "kiki023"
             git commit -am "Bump docker tag"
-        - name: Push changes
-          uses: ad-m/github-push-action@master
-          with:
-            github_token: ${{ secrets.PAT }}
-            branch: ${{ github.ref }}
+            git push --f origin master
+       # - name: Push changes
+       #   uses: ad-m/github-push-action@master
+       #   with:
+       #     github_token: ${{ secrets.PAT }}
+       #     branch: ${{ github.ref }}
         
