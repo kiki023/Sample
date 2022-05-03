@@ -3,8 +3,8 @@ on:
     branches:
       -  'master'
 
-#env:
-#  GH_TOKEN: ${{ secrets.PAT }}   
+env:
+  GH_TOKEN: ${{ secrets.GH_TOKEN }}   
   
 jobs:
   build:
@@ -16,9 +16,7 @@ jobs:
             fetch-depth: 0
             ref: master
             token: ${{ secrets.PAT }}
-        - name: My action
-          env:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        
       
         
         - name: Update Kubernetes resources   
@@ -39,7 +37,7 @@ jobs:
             restrictions: | 
               null 
           env:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN  }}
+            GITHUB_TOKEN: ${{ secrets.GH_TOKEN  }}
        
         - name: Commit files
           run: |
