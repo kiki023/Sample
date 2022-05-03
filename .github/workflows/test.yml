@@ -39,4 +39,4 @@ jobs:
           with:
             token: ${{ secrets.PAT }}
             branch_name: 'master'
-            bot_name: 'admin-machine'
+            bot_name: 'kiki023'
