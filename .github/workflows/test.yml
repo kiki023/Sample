@@ -4,6 +4,7 @@ on:
       -  'master'
     paths-ignore:
       - 'springapp.yml'
+      - 'src/main/ba.yml'
 #env:
  # GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}   
   
