@@ -24,9 +24,8 @@ jobs:
               
         - name: Commit files
           run: |
-            git config --local user.email "ike.lovelyn@yahoo.com"
-            git config --local user.name "kiki023"
-            git add springapp.yml
+            git config --local user.email "action@github.com"
+            git config --local user.name "GitHub Action"
             git commit -am "Bump docker tag"
             git push
         
