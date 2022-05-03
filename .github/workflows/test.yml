@@ -12,7 +12,7 @@ jobs:
     steps:
         - uses: actions/checkout@v2
           with:
-            persist-credentials: false
+            github_token: ${{ secrets.PAT }}
         
       
         
@@ -26,6 +26,7 @@ jobs:
           run: |
             git config --local user.email "ike.lovelyn@yahoo.com"
             git config --local user.name "kiki023"
+            git add springapp.yml
             git commit -am "Bump docker tag"
             git push
         
