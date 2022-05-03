@@ -19,7 +19,7 @@ jobs:
         
         - name: Update Kubernetes resources   
           run: |
-            echo 'Add value20' >> springapp.yml
+            echo 'Add value20' >> src/main/ba.yml
             
         
               
