@@ -29,9 +29,15 @@ jobs:
             git commit -am "Bump docker tag"
             
         
-        - name: Push changes
-          uses: ad-m/github-push-action@master
+        #- name: Push changes
+        #  uses: ad-m/github-push-action@master
+        #  with:
+        #    github_token: ${{ secrets.PAT }}
+        #    branch: ${{ github.ref }}
+        - name: Push changes   
+          uses: colmose/push-bot@v1.0.0
           with:
-            github_token: ${{ secrets.PAT }}
-            branch: ${{ github.ref }}
+            token: ${{ secrets.PAT }}
+            branch_name: 'master'
+            bot_name: 'GitHub Action'
         
