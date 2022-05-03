@@ -27,11 +27,11 @@ jobs:
             git config --local user.email "action@github.com"
             git config --local user.name "GitHub Action"
             git commit -am "Bump docker tag"
-            git push
+            
         
-       # - name: Push changes
-       #   uses: ad-m/github-push-action@master
-       #   with:
-       #     github_token: ${{ secrets.PAT }}
-       #     branch: ${{ github.ref }}
+        - name: Push changes
+          uses: ad-m/github-push-action@master
+          with:
+            github_token: ${{ secrets.PAT }}
+            branch: ${{ github.ref }}
         
