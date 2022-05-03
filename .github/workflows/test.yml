@@ -4,7 +4,7 @@ on:
       -  'master'
 
 env:
-  GH_TOKEN: ${{ secrets.GH_TOKEN }}   
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}   
   
 jobs:
   build:
@@ -37,7 +37,7 @@ jobs:
             restrictions: | 
               null 
           env:
-            GITHUB_TOKEN: ${{ secrets.GH_TOKEN  }}
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN  }}
        
         - name: Commit files
           run: |
