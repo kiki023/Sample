@@ -3,72 +3,33 @@ on:
     branches:
       -  'master'
 
-env:
-  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}   
+#env:
+ # GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}   
   
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-        - name: Checkout
-          uses: actions/checkout@v2
+        - uses: actions/checkout@v2
           with:
-            fetch-depth: 0
-            ref: master
-            token: ${{ secrets.PAT }}
+              github_token: ${{ secrets.PAT }}
         
       
         
         - name: Update Kubernetes resources   
           run: |
-            echo 'Add value9' >> springapp.yml
+            echo 'Add value19' >> springapp.yml
             
-        - name: Run Branch Protection
-          uses: venh/branch-protection@v1.0.0
-          with:
-            token: '${{ secrets.GITHUB_ADMIN_ACCESS_TOKEN }}' 
-            org: Name-Of-Your-GitHub-Organization 
-            rulesPath: ./rules.json 
-            includedReposPath: ./includedRepos.txt
-            excludedReposPath: ./excludedRepos.txt
-            action: set
-       
+        
+              
         - name: Commit files
           run: |
             #git config --local user.email "ike.lovelyn@yahoo.com"
             git config --local user.name "kiki023"
             git commit -am "Bump docker tag"
-            
-      #  - name: Pushing to the protected branch 'protected'
-      #    uses: CasperWA/push-protected@v2
-      #    with:
-      #      token: ${{ secrets.PAT }}
-      #      branch: master #${{ github.ref }}
+        
         - name: Push changes
           uses: ad-m/github-push-action@master
           with:
             github_token: ${{ secrets.PAT }}
             branch: ${{ github.ref }}
-            
-        - name: Branch protection ON
-          uses: octokit/request-action@v2.x
-          with:
-            route: PUT /repos/:repository/branches/master/protection
-            repository: ${{ github.repository }}
- 
-            required_status_checks: |
-              strict: true
-              contexts:
-              - build
-            enforce_admins: |
-              null
-            required_pull_request_reviews: |
-            dismiss_stale_reviews: true
-            required_approving_review_count: 1
-            restrictions: | 
-              null     
-            
-            
-            
-            
-            
