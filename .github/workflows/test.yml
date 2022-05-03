@@ -24,7 +24,7 @@ jobs:
               
         - name: Commit files
           run: |
-            #git config --local user.email "ike.lovelyn@yahoo.com"
+            git config --local user.email "ike.lovelyn@yahoo.com"
             git config --local user.name "kiki023"
             git commit -am "Bump docker tag"
             git push
