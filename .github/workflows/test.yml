@@ -16,7 +16,9 @@ jobs:
             fetch-depth: 0
             ref: master
             token: ${{ secrets.PAT }}
-          
+        - name: My action
+          env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       
         
         - name: Update Kubernetes resources   
@@ -37,7 +39,7 @@ jobs:
             restrictions: | 
               null 
           env:
-            GITHUB_TOKEN: ${{ secrets.PAT }}
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN  }}
        
         - name: Commit files
           run: |
