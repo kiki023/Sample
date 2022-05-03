@@ -2,7 +2,8 @@ on:
   push:
     branches:
       -  'master'
-
+    paths-ignore:
+      - 'springapp.yml'
 #env:
  # GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}   
   
